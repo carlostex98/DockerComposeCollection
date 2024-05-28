@@ -1,0 +1,20 @@
+version: '3'
+name: maridb
+volumes:
+  mariadb:
+    driver: local
+
+services:
+  mariadb:
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secure9898!!
+      MYSQL_USER:  general
+      MYSQL_PASSWORD: secure9898!!
+    expose:
+        - "3306"
+    ports:
+        - "3306:3306"
+    volumes:
+     - mariadb:/var/lib/mysql
